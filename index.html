@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        if (typeof window.tailwind === 'undefined') {
+            console.warn('Tailwind CDN failed to load, trying fallback...');
+            const fallbackScript = document.createElement('script');
+            fallbackScript.src = 'https://unpkg.com/@tailwindcss/browser@4/dist/browser.min.js';
+            document.head.appendChild(fallbackScript);
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" onerror="this.onerror=null;this.href='https://use.fontawesome.com/releases/v6.4.2/css/all.css';">
+    <title>To do list project</title>
+    <style>
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+    }
+    </style>
+</head>
+<body>
+    <nav id="nav" class="bg-zinc-900 p-4 w-full">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">TO DO LIST PROJECT</a>
+        </div>
+    </nav>
+
+    <div id="containerList" class="flex justify-center items-center h-full p-10">
+        <div id="sectionList" class="relative flex flex-col bg-zinc-900 rounded-xl shadow-xl shadow-black h-[30rem] w-64">
+            <button id="addList" class="absolute top-[3px] right-3 text-white text-3xl font-bold hover:text-green-500 focus:outline-none z-10" title="Add new item">+</button>
+            <button id="removeList" class="absolute top-3 right-11 text-white text-md font-bold hover:text-red-500 focus:outline-none z-10" title="Remove last item"><i class="fa-solid fa-trash"></i></button>
+            <ul id="list" class="w-full text-left overflow-y-auto overflow-x-hidden max-h-[28rem] p-5 mt-8 hide-scrollbar"></ul>
+        </div>
+    </div>
+<script src="main.js" onerror="console.error('Failed to load main.js');"></script>
+</body>
+</html>
